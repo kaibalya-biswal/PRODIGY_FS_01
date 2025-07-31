@@ -1,12 +1,11 @@
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #222;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,18 +21,131 @@ a:hover {
   color: #535bf2;
 }
 
+
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+  color: #f3f4f6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
+.main-card {
+  background: #18181b;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 400px;
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f3f4f6;
+}
+
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #3b82f6;
+  letter-spacing: -1px;
+}
+
+.auth-container {
+  background: #23272f;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.08);
+  padding: 2rem 2rem 1.5rem 2rem;
+  max-width: 350px;
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f3f4f6;
+}
+
+.auth-container h2 {
+  color: #60a5fa;
+  margin-bottom: 1.2em;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.7em 1em;
+  margin-bottom: 1em;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background: #18181b;
+  color: #f3f4f6;
+  font-size: 1em;
+  transition: border 0.2s, background 0.2s;
+}
+.auth-container input:focus {
+  border: 1.5px solid #60a5fa;
+  outline: none;
+  background: #23272f;
+}
+
+.auth-container button {
+  width: 100%;
+  margin-bottom: 0.5em;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.auth-container button:hover {
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.12);
+}
+
+.auth-container p {
+  margin-top: 0.5em;
+  font-size: 0.98em;
+}
+
+.admin-panel {
+  background: #23272f;
+  border-radius: 10px;
+  padding: 1.2em 1.5em;
+  margin-top: 1.5em;
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.06);
+  color: #f3f4f6;
+}
+
+.read-the-docs {
+  color: #888;
+  font-size: 0.95em;
+  margin-top: 2em;
+}
+
 
 button {
   border-radius: 8px;
@@ -42,27 +154,35 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #2563eb;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background 0.2s, border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #1d4ed8;
+  border-color: #60a5fa;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
   }
   a:hover {
-    color: #747bff;
+    color: #2563eb;
+  }
+  .main-card, .auth-container {
+    background: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #2563eb;
+    color: #fff;
   }
 }

@@ -31,13 +31,14 @@ export default function Auth({ onAuth }) {
   return (
     <div className="auth-container">
       <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.7em' }}>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
+          style={{ width: '100%' }}
         />
         <input
           type="password"
@@ -45,12 +46,13 @@ export default function Auth({ onAuth }) {
           value={password}
           onChange={e => setPassword(e.target.value)}
           required
+          style={{ width: '100%' }}
         />
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} style={{ width: '100%' }}>
           {loading ? 'Loading...' : isSignUp ? 'Sign Up' : 'Login'}
         </button>
       </form>
-      <button onClick={() => setIsSignUp(!isSignUp)} style={{marginTop: 8}}>
+      <button onClick={() => setIsSignUp(!isSignUp)} style={{marginTop: 8, width: '100%'}}>
         {isSignUp ? 'Already have an account? Login' : "Don't have an account? Sign Up"}
       </button>
       {error && <p style={{color: 'red'}}>{error}</p>}

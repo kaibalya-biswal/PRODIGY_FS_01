@@ -1,12 +1,43 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Secure User Authentication App
 
-Currently, two official plugins are available:
+This project is a modern React.js application (bootstrapped with Vite) featuring secure user authentication using Supabase. It includes registration, login, protected routes, role-based access control, and a beautiful dark-themed UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- User registration & login (Supabase Auth)
+- Secure session management
+- Protected routes
+- Role-based access control (admin/user)
+- Modern, responsive, and animated UI
 
-## Expanding the ESLint configuration
+## Getting Started
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/kaixb/prodigy.git
+   cd prodigy
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Configure your Supabase project:
+   - Create a project at [Supabase](https://supabase.com/)
+   - Copy your Supabase URL and anon/public key
+   - Add them to a `.env` file in the project root:
+     ```env
+     VITE_SUPABASE_URL=your-supabase-url
+     VITE_SUPABASE_ANON_KEY=your-anon-key
+     ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshots
+<!-- Add screenshots here if desired -->
+
+## Author
+- **Kaibalya Biswal** ([kaibalya-biswal](https://github.com/kaibalya-biswal) 
+
+## License
+This project is open source and available under the [MIT License](LICENSE).

@@ -37,18 +37,30 @@ function App() {
 
   if (loading) return <div>Loading...</div>;
 
+  // Animated header component
+  const AnimatedHeader = () => (
+    <h1 className="animated-header">Secure User Authentication</h1>
+  );
+
   if (!user) {
-    return <Auth onAuth={() => window.location.reload()} />;
+    return (
+      <div className="main-card">
+        <AnimatedHeader />
+        <Auth onAuth={() => window.location.reload()} />
+      </div>
+    );
   }
 
   return (
-    <Protected user={user} onLogout={() => setUser(null)}>
-      <h1>Welcome to the Protected Area</h1>
-      <p>Your email: {user.email}</p>
-      <p>Your role: {role}</p>
-      {role === 'admin' && <AdminPanel />}
-      <p style={{marginTop: 32}}>This is a protected route. Only authenticated users can see this.</p>
-    </Protected>
+    <div className="main-card">
+      <AnimatedHeader />
+      <Protected user={user} onLogout={() => setUser(null)}>
+        <p>Your email: {user.email}</p>
+        <p>Your role: {role}</p>
+        {role === 'admin' && <AdminPanel />}
+        <p style={{marginTop: 32}}>This is a protected route. Only authenticated users can see this.</p>
+      </Protected>
+    </div>
   );
 }
 
